@@ -29,8 +29,8 @@ describe("test /api/auth/register route", ()=> {
 
     test("test register route with correct data", async()=> {
         const registerData = {
-            name: "Bogdan",
-            email: "bogdan@gmail.com",
+            name: "Artem",
+            email: "artem@gmail.com",
             password: "123456"
         };
 
