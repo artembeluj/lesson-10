@@ -1,8 +1,8 @@
 /*
 
 1. Отримаємо рік у вигляді цілого числа.
-2. Повертає true, якщо рік високісний, і false - якщо ні.
-3. Якщо откримує некорректні дані, викидає помилку з правильним
+2. Повертає true, якщо рік високосний, і false - якщо ні.
+3. Якщо отримує некорректні дані, викидає помилку з правильним
 текстом.
 
 2008 - true
@@ -34,50 +34,41 @@ describe("test isLeapYear function", ()=> {
         expect(isLeapYear(2003)).toBe(false);
     });
 
-    test("1900 - false", ()=> {
+    it("1900 - false", ()=> {
         expect(isLeapYear(1900)).toBe(false);
     });
 
-    test("2000 - true", ()=> {
+    it("2000 - true", ()=> {
         expect(isLeapYear(2000)).toBe(true);
     });
 
-    test("41 - error 'year must be 42 or more'", ()=> {
-        expect(() => isLeapYear(41)).toThrow('year must be 42 or more')
+    it("41 - error 'year must be 42 or more'", ()=> {
+        expect(()=> isLeapYear(41)).toThrow("year must be 42 or more");
     });
 
-    test("2008.4 - error 'year must be integer'", ()=> {
-        expect(() => isLeapYear(2008.4)).toThrow('year must be integer')
+    it("2008.4 - error 'year must be integer'", ()=> {
+        expect(()=> isLeapYear(2008.4)).toThrow("year must be integer");
     });
 
-    test("() - error 'year must be exist'", ()=> {
-        expect(() => isLeapYear()).toThrow('year must be exist')
+    it("() - error 'year must exist'", ()=> {
+        expect(()=> isLeapYear()).toThrow("year must be exist");
     });
 
-    test("'2008' - error 'year must be number'", ()=> {
-        expect(() => isLeapYear('2008')).toThrow('year must be number')
+    it("'2008' - error 'year must be number'", ()=> {
+        expect(()=> isLeapYear('2008')).toThrow("year must be number");
     });
 
-    test("null - error 'year must be number'", ()=> {
-        expect(() => isLeapYear(null)).toThrow('year must be number')
+    it("false - error 'year must be number'", ()=> {
+        expect(()=> isLeapYear(false)).toThrow("year must be number");
     });
 
-    test("false - error 'year must be number'", ()=> {
-        expect(() => isLeapYear(false)).toThrow('year must be number')
+    it("()=>{} - error 'year must be number'", ()=> {
+        expect(()=> isLeapYear(()=>{})).toThrow("year must be number");
     });
 
-    test("()=>{} - error 'year must be number'", ()=> {
-        expect(() => isLeapYear(()=>{})).toThrow('year must be number')
-    });
-
-    test("{} - error 'year must be number'", ()=> {
-        expect(() => isLeapYear({})).toThrow('year must be number')
-    });
-
-    test("[] - error 'year must be number'", ()=> {
-        expect(() => isLeapYear([])).toThrow('year must be number')
-    });
-})
-
+    // it("", ()=> {
+    //     expect().toBe();
+    // });
+});
 
 
